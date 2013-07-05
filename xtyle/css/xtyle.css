@@ -2332,6 +2332,13 @@ div.resize {
 }
 
 @media screen and (max-width: 600px) {
+
+  video{
+    height: 400px;
+  }
+  body.background-size-cover{
+    background-position: -150px ;
+  }
   html.responsive {
     -webkit-text-size-adjust: none;
     /* Prevent font scaling in landscape */

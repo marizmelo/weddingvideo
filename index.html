@@ -17,27 +17,59 @@
   <!-- <link rel="alternate" type="application/rss+xml" title="" href=""> -->
   <link href="xtyle/img/favicon.ico" rel="icon" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="xtyle/css/xtyle.css">
+  <link rel="stylesheet" type="text/css" href="xtyle/css/samiramariz.css">
+  <script src="http://vjs.zencdn.net/4.1.0/video.js"></script>
+    <link href="http://vjs.zencdn.net/4.1.0/video-js.css" rel="stylesheet">
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-  <script src="/xtyle/js/xtyle.js"></script>
 </head>
-<body>
+<body class="background-size-cover">
   <!-- XTYLE GREETINGS -->
-  <div class="padding2x margin2x">
-    <h1 style="max-width: 600px">
-      <thin>
-        Welcome! Thank you for using <span class="normal">xtyle</span>. We hope you enjoy using it as much as we enjoyed making it for you.
-      </thin>
-    </h1>
-    <br>
-    <hr>
-    <ul class="inline">
-      <li>learn <a href="http://xtyle.xchema.com">xtyle</a></li>
-      <li>fork on <a href="http://github.com/xchema/xtyle">Github</a></li>
-      <li>made by <a href="http://xchema.com">xchema</a></li>
-    </ul>
-    <hr>
+  <nav>
+    <span class="logo padding-left padding-top">
+      <h1>Samira & Mariz</h1>
+    </span>
+    <div>
+      <a href="http://propix.smugmug.com/Weddings/Mariz-and-Samira/30053940_pqqGcd" target="_blank">Photos</a>
+      <a id="videobutton" href="#">Video</a>
+    </div>
+    <div class="float-right">
+      <a href="#">
+        <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Freference%2Fplugins%2Flike&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=365113216905301" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
+      </a>
+    </div>
+  </nav>
+
+
+  <div id="video_container" style="position: absolute; margin-top: 75px; width: 100%; height: 0; overflow: hidden;" class="display-none">
+    <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="100%" height="520" poster="my_video_poster.png" data-setup="{}">
+     <source src="./xtyle/video/samiramariz.mp4" type='video/mp4'>
+     <!-- <source src="my_video.webm" type='video/webm'> -->
+    </video>
+  </div>
+
+
+
   </div>
   <!-- XTYLE GREETINGS : END -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <script src="./xtyle/js/xtyle.js"></script>
+  <script>
+    $(function () {
+      var myPlayer = videojs("my_video_1");
+      $("#videobutton").on("click", function () {
+        if ($("#video_container").hasClass("display-none")) {
+          $("#video_container").removeClass("display-none").animate({"height":"520px"},"slow", function () {
+            myPlayer.play();
+          });
+          
+        } else {
+          myPlayer.pause();
+          $("#video_container").animate({"height":0},"slow", function () {
+            $(this).addClass("display-none");
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
