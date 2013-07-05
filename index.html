@@ -40,8 +40,8 @@
   </nav>
 
 
-  <div id="video_container" style=" width: 100%; height: 0;" class="display-none">
-    <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="100%" height="520" poster="" data-setup="{}">
+  <div id="video_container" style=" width: 100%; height: 100%; margin-top: 0; z-index: 0; top: 0; overflow: hidden;" class="display-none">
+    <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="100%" height="100%" poster="" data-setup="{}">
      <source src="xtyle/video/wedding.mp4" type='video/mp4'>
      <!-- <source src="my_video.webm" type='video/webm'> -->
     </video>
@@ -52,19 +52,20 @@
   </div>
   <!-- XTYLE GREETINGS : END -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <script src="xtyle/js/magnific.js"></script>
   <script src="xtyle/js/xtyle.js"></script>
   <script>
     $(function () {
       var myPlayer = videojs("my_video_1");
       $("#videobutton").on("click", function () {
         if ($("#video_container").hasClass("display-none")) {
-          $("#video_container").removeClass("display-none").animate({"height":"520px"},"slow", function () {
+          $("#video_container").removeClass("display-none").fadeIn("slow", function () {
             myPlayer.play();
           });
           
         } else {
           myPlayer.pause();
-          $("#video_container").animate({"height":0},"slow", function () {
+          $("#video_container").fadeOut("slow", function () {
             $(this).addClass("display-none");
           });
         }

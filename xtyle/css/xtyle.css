@@ -2332,7 +2332,15 @@ div.resize {
 }
 
 @media screen and (max-width: 600px) {
-
+  nav{
+    position: absolute !important;
+    z-index: 30;
+  }
+  #video_container{
+    position: absolute;
+    margin-top: 0;
+    top: 0;
+  }
   video{
     height: 400px;
   }
