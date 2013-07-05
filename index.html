@@ -28,7 +28,7 @@
     <span class="logo padding-left padding-top">
       <h1>Samira & Mariz</h1>
     </span>
-    <div>
+    <div class="text-shadow">
       <a href="http://propix.smugmug.com/Weddings/Mariz-and-Samira/30053940_pqqGcd" target="_blank">Photos</a>
       <a id="videobutton" href="#">Video</a>
     </div>
@@ -52,13 +52,13 @@
   </div>
   <!-- XTYLE GREETINGS : END -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-  <script src="xtyle/js/magnific.js"></script>
   <script src="xtyle/js/xtyle.js"></script>
   <script>
     $(function () {
       var myPlayer = videojs("my_video_1");
       $("#videobutton").on("click", function () {
         if ($("#video_container").hasClass("display-none")) {
+          $("#videobutton").addClass("active");
           $("#video_container").removeClass("display-none").fadeIn("slow", function () {
             myPlayer.play();
           });
@@ -67,6 +67,7 @@
           myPlayer.pause();
           $("#video_container").fadeOut("slow", function () {
             $(this).addClass("display-none");
+            $("#videobutton").removeClass("active");
           });
         }
       });

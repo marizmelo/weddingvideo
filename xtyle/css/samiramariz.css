@@ -20,9 +20,17 @@ nav a {
   border: none !important;
 }
 
+nav a:active {
+  color: #777973;
+}
+
 .vjs-default-skin .vjs-big-play-button
 {
 top: 50%;
 left: 50%;
 margin: -4em auto auto -6em;
+}
+
+#videobutton.active{
+  color: #ae9e73 !important;
 }
