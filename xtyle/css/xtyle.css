@@ -2334,7 +2334,11 @@ div.resize {
 @media screen and (max-width: 600px) {
   nav{
     position: absolute !important;
-    z-index: 30;
+    display: block;
+  }
+  nav a{
+    padding: 8px 15px !important;
+    display: block;
   }
   #video_container{
     position: absolute;
@@ -2345,7 +2349,9 @@ div.resize {
     height: 400px;
   }
   body.background-size-cover{
-    background-position: -150px ;
+    background-position: ;
+    background-size: 300% 180%;
+    background-repeat: no-repeat;
   }
   html.responsive {
     -webkit-text-size-adjust: none;
